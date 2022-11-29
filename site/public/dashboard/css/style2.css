@@ -14117,3 +14117,27 @@ html:not([dir=rtl]) .wrapper {
   width: 500px;
   height: 300px;
 }
+.div-usuarios{
+  width: 300px;
+  height: 250px;
+}
+
+
+.table-responsive {
+  overflow: auto;
+  padding-bottom: 10px;
+}
+
+#tables .table-responsive {
+  margin-bottom: 30px;
+} 
+
+.qtd-maq{
+  color: #000015;
+  height: 70px;
+  width: 1000px;
+  display: flex;
+  background-color:white;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}

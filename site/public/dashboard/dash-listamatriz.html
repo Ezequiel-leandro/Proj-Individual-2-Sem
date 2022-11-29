@@ -59,44 +59,7 @@
     <link href="vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
   </head>
   <body>
-    <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
-      <div class="sidebar-brand d-none d-md-flex">
-        <div class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-          <img src="assets/brand/favicon.png " alt="" style="height: 70" width="170">
-        </div>
-        <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
-          <use xlink:href="assets/brand/coreui.svg#signet"></use>
-        </svg>
-      </div>
-      <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
-        <li class="nav-title">Componentes</li>
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-            <svg class="nav-icon">
-              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
-          </svg>Dashboards</a>
-        <ul class="nav-group-items">
-          <li class="nav-item"><a class="nav-link" href="index.html"><span class="nav-icon"></span>Dashboard Inicial</a></li>
-          <li class="nav-item"><a class="nav-link" href="dash-gerente-matriz.html"><span class="nav-icon"></span>Gerente(Matriz)</a></li>
-          <li class="nav-item"><a class="nav-link" href="dash-gerente-filial.html"><span class="nav-icon"></span>Gerente(Filial)</a></li>
-          <li class="nav-item"><a class="nav-link" href="dash-analista.html"><span class="nav-icon"></span>Analista(Filial)</a></li>
-          <li class="nav-item"><a class="nav-link" href="dash-tecnico.html"><span class="nav-icon"></span>Tecnico(Filial)</a></li>
-        </ul>
-      </li>
-        <li class="nav-title">Cadastro</li> 
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-            <svg class="nav-icon">
-              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-star"></use>
-            </svg> Opções</a>
-          <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="../sala.html" target="_top">
-                <svg class="nav-icon">
-                  <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
-                </svg> Cadastro de sala</a></li>  
-        </li>
-          </a></li>
-      </ul>    
-      <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
-    </div>
+    
     <div class="wrapper d-flex flex-column min-vh-100 bg-light">
       <header class="header header-sticky mb-4">
         <div class="container-fluid">
@@ -130,7 +93,7 @@
                     <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
                   </svg> Configurações</a><a href="#">
                   <ul class="icon me-2">
-                    <a class="nav-link" href="../login.html"></svg> Sair</a>
+                    <a class="nav-link" href="../dashboard/dash-gerente-matriz.html"></svg> Sair</a>
               </div>
             </li>
           </ul>
@@ -142,8 +105,6 @@
               <li class="breadcrumb-item">
                 <!-- if breadcrumb is single--><span>Início</span>
               </li>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <button class="nav-link" href="../dashboard/dash-listamatriz.html">Lista de Usuarios</button>
             </ol>
           </nav>
         </div>
@@ -159,20 +120,34 @@
             <!-- /.col-->
           </div>
           <!-- /.row-->
-          <div class="qtd-maq">Quantidade de Totens nas Filias</div>
-            <div class="col-sm-6 col-lg-3">
-              <div class="card mb-4 text-white bg-danger">
-                <div class="card-body pb-0 d-flex justify-content-between align-items-start">
-                  <div>
-                    <div class="fs-4 fw-semibold">Totens cadastrados</div>
-                  <div>Qtd:</div>
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <div class="div-ezeq1">                  
+                  <h4 class="card-title mb-0">Relatório De Usuarios</h4>
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          Nome Funcionario 
+                        </th>
+                        <th>
+                          Email
+                        </th>
+                        <th>
+                          Licença
+                        </th>
+                      </thead>
+                      <tbody id="tabela_registro">
+  
+                      </tbody>
+                    </table>
+                  </div>
+                      <div class="div-usuarios" onload="listar2()"></div>
                 </div>
               </div>
-              <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;" id="teste.innerHTML">
-                  
-              </div>
             </div>
-        </div>
+          </div>
           </div>
     <!-- CoreUI and necessary plugins-->
     <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
@@ -184,65 +159,30 @@
     <script src="js/main.js"></script>
   </body>
 </html>
+
+
 <script>
+    const open = document.getElementById('AddUsuario')
+    const modal_container = document.getElementById('modal_container')
+    const close = document.getElementById('close')
   
-
-  var vetor_nomeUsu = []
-  var vetor_emailUsu = []
-  var vetor_fkLic = []
   
-  function listar2(idUsuario) {
-    fetch(`/usuario/listar2/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
-      if (response.ok) {
-        response.json().then(function (resposta) {
-          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-          console.log(resposta)
-          resposta.reverse();
-          resposta.forEach(element => {
-            vetor_nomeUsu.push(element.vetor_nomeUsu.slice(11))
-          });
-          resposta.forEach(element => {
-            vetor_emailUsu.push(element.vetor_emailUsu.slice(11))
-          });
-          resposta.forEach(element => {
-            vetor_fkLic.push(element.vetor_fkLic.slice(11))
-          });
-          // PlotarGrafico(resposta, fkTorre);
-        });
-      } else {
-        console.error('Nenhum dado encontrado ou erro na API');
-      }
-    })
-      .catch(function (error) {
-        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-      });
-  }
+    open.addEventListener('click', () => { modal_container.classList.add('show') });
+    close.addEventListener('click', () => { modal_container.classList.remove('show') });
+  
+    const modal_container_aviso = document.getElementById('modal_container_aviso')
+    const close_aviso = document.getElementById('close_aviso')
+    close_aviso.addEventListener('click', () => { modal_container_aviso.classList.remove('show') });
+  </script>
+  
+  <script>
+    function Logout() {
+      sessionStorage.clear();
+    }
+  </script>
+  
+  <script>
 
-  var vetor_maq = []
-
-  function listarMaq(fkFilial) {
-    fetch(`/usuario/listarMaq/${fkFilial}`, { cache: 'no-store' }).then(function (response) {
-      if (response.ok) {
-        response.json().then(function (resposta) {
-          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-          console.log(resposta)
-          resposta.reverse();
-          resposta.forEach(element => {
-            vetor_maq.push(element.vetor_maq.slice(11))
-          });
-          // PlotarGrafico(resposta, fkTorre);
-        });
-      } else {
-        console.error('Nenhum dado encontrado ou erro na API');
-      }
-    })
-      .catch(function (error) {
-        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-      });
-      teste.innerHTML = vetor_maq
-  }
-
-  window.onload = listarMaq();
     var vetor_Filial = []
     var fkFilial = sessionStorage.ID_FILIAL;
     var filial;
@@ -276,7 +216,97 @@
   
       setTimeout(() => PlotarRegistro(fkFilial), 3000);
   
-    } 
-
+    }
   
-</script>
+    function ObterEmpresa(fkFilial) {
+      fetch(`/medidas/Registro/${fkFilial}`, { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+          response.json().then(function (resposta) {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+            console.log(resposta)
+            resposta.reverse();
+            resposta.forEach(element => {
+              if (element.fkFilial == 1){
+                Filial = "Empresa 1 "
+              } else if (element.fkFilial == 2){
+                Filial = "Empresa 2"
+              } else if (element.fkFilial == 3){
+                Filial = "Empresa 3"
+              } else if (element.fkFilial == 4){
+                Filial = "Empresa 4"
+              } else if (element.fkFilial == 5){
+                Filial = "Empresa 5"
+              } 
+              tabela_registro.innerHTML += `
+                         <tr>
+                          <td>
+                            ${element.Nome}
+                          </td>
+                          <td>
+                            ${element.Email}
+                          </td>
+                          <td>
+                            ${element.Licenca}
+                          </td>
+                          <td>
+                            ${Filial}
+                          </td>
+                        </tr>`
+            });
+            // PlotarGrafico(resposta, fkTorre);
+          });
+        } else {
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
+        .catch(function (error) {
+          console.error(`Erro na obtenção dos dados p/ registro: ${error.message}`);
+        });
+    }    
+  
+    function PlotarRegistro(fkFilial) {
+      fetch(`/medidas/Registro/${fkFilial}`, { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+          response.json().then(function (resposta) {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+            console.log(resposta)
+            resposta.reverse();
+            resposta.forEach(element => {
+              if (element.fkFilial == 1){
+                Filial = "Empresa 1 "
+              } else if (element.fkFilial == 2){
+                Filial = "Empresa 2"
+              } else if (element.fkFilial == 3){
+                Filial = "Empresa 3"
+              } else if (element.fkFilial == 4){
+                Filial = "Empresa 4"
+              } else if (element.fkFilial == 5){
+                Filial = "Empresa 5"
+              } 
+              tabela_registro.innerHTML += `
+                         <tr>
+                          <td>
+                            ${element.Nome}
+                          </td>
+                          <td>
+                            ${element.Email}
+                          </td>
+                          <td>
+                            ${element.Licenca}
+                          </td>
+                          <td>
+                            ${Filial}
+                          </td>
+                        </tr>`
+            });
+            // PlotarGrafico(resposta, fkTorre);
+          });
+        } else {
+          console.error('Nenhum dado encontrado ou erro na API');
+        }
+      })
+        .catch(function (error) {
+          console.error(`Erro na obtenção dos dados p/ registro: ${error.message}`);
+        });
+    }
+  </script>

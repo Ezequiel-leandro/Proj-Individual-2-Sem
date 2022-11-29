@@ -21,7 +21,19 @@ router.post("/autenticar", function (req, res) {
 });
 
 router.get("/listar2", function (req, res) {
-    usuarioController.listar(req, res);
+    usuarioController.listar2(req, res);
+});
+
+router.get("/entrar2", function (req, res) {
+    usuarioController.entrar2(req, res);
+});
+
+router.get("/listar3", function (req, res) {
+    usuarioController.listar3(req, res);
+});
+
+router.get("/listarMaq", function (req, res) {
+    usuarioController.listarMaq(req, res);
 });
 
 module.exports = router;

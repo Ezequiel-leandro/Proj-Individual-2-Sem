@@ -124,9 +124,143 @@ function listar2(req, res) {
 }
 
 
+
+function ObterFilial(req, res) {
+    var fkFilial = req.body.fkFilialServer;
+    
+    if(fkFilial == undefined) {
+        res.status(400).send("Seu fkEmpresa está undefined!");
+    }else {
+        
+usuarioModel.ObterNomeEmp(fkEmpresa)
+    .then(
+        function (resultado) {
+            console.log(`\nResultados encontrados: ${resultado.length}`);
+            console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+            if (resultado.length != 0) {
+                console.log(resultado);
+                res.json(resultado);
+            } else if (resultado.length == 0) {
+                res.status(403).send("Não tem torre");
+            }
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            console.log("\nHouve um erro ao realizar o encontrar nome emp! Erro: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}}
+
+
+function listarMaq(req, res) {
+    var fkFilial = req.body.fkFilialServer;
+    
+    if(fkFilial == undefined) {
+        res.status(400).send("Seu fkEmpresa está undefined!");
+    }else {
+        
+usuarioModel.ObterNomeEmp(fkEmpresa)
+    .then(
+        function (resultado) {
+            console.log(`\nResultados encontrados: ${resultado.length}`);
+            console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+            if (resultado.length != 0) {
+                console.log(resultado);
+                res.json(resultado);
+            } else if (resultado.length == 0) {
+                res.status(403).send("Não tem torre");
+            }
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            console.log("\nHouve um erro ao realizar o encontrar nome emp! Erro: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}}
+
+
+
+
+
+// function entrar2(req, res) {
+//     var fkFilial = req.body.fkFilialServer;
+
+//     if (fkFilial == undefined) {
+//         res.status(400).send("Id da Filial não encontrado");
+//     } else {
+        
+//         usuarioModel.entrar2(fkFilial)
+//             .then(
+//                 function (resultado) {
+//                     console.log(`\nResultados encontrados: ${resultado.length}`);
+//                     console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+//                     if (resultado.length == 1) {
+//                         console.log(resultado);
+//                         res.json(resultado[0]);
+//                     } else if (resultado.length == 0) {
+//                         res.status(403).send("Empresa não encontrada");
+//                     } 
+//                 }
+//             ).catch(
+//                 function (erro) {
+//                     console.log(erro);
+//                     console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+//                     res.status(500).json(erro.sqlMessage);
+//                 }
+//             );
+//     }
+
+// }
+
+// function listar3(req, res) {
+//     var idFilial = req.body.idFilialServer;
+//     var nomeFantasia = req.body.nomeFantasiaServer;
+
+//     if (idFilial == undefined) {
+//         res.status(400).send("Id da Filial não encontrado");
+//     } else if (nomeFantasia == undefined) {
+//         res.status(400).send("NomeFantasia não encontrado");
+//     } else {
+        
+//         usuarioModel.listar3(idFilial)
+//             .then(
+//                 function (resultado) {
+//                     console.log(`\nResultados encontrados: ${resultado.length}`);
+//                     console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+//                     if (resultado.length == 1) {
+//                         console.log(resultado);
+//                         res.json(resultado[0]);
+//                     } else if (resultado.length == 0) {
+//                         res.status(403).send("Filial não encontrada");
+//                     } 
+//                 }
+//             ).catch(
+//                 function (erro) {
+//                     console.log(erro);
+//                     console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+//                     res.status(500).json(erro.sqlMessage);
+//                 }
+//             );
+//     }
+
+// }
+
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    listar2,
+    ObterFilial,
+    listarMaq
+    // entrar2
 }
