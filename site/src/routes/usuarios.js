@@ -20,6 +20,10 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+router.post("/alertas", function (req, res) {
+    usuarioController.alertas(req, res);
+});
+
 router.get("/listar2", function (req, res) {
     usuarioController.listar2(req, res);
 });

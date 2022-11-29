@@ -41,7 +41,6 @@ function buscarMedidasEmTempoReal(req, res) {
     });
 }
 
-
 function buscarRegistro(req, res) {
 
     var fkFilial = req.params.fkFilial;
@@ -60,7 +59,6 @@ function buscarRegistro(req, res) {
         res.status(500).json(erro.sqlMessage);
     });
 }
-
 
 module.exports = {
     buscarUltimasMedidas,
