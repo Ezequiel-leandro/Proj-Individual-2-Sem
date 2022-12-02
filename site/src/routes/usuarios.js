@@ -40,4 +40,16 @@ router.get("/listarMaq", function (req, res) {
     usuarioController.listarMaq(req, res);
 });
 
+router.get("/listarChamados", function (req, res) {
+    usuarioController.listarChamados(req, res);
+});
+
+router.post("/listarAtm", function (req, res) {
+    usuarioController.listarAtm(req, res);
+});
+
+router.post("/listarCriticidade", function (req, res) {
+    usuarioController.listarCriticidade(req, res);
+});
+
 module.exports = router;

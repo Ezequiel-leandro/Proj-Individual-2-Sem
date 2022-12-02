@@ -8,118 +8,130 @@
 -->
 <!-- Breadcrumb -->
 <html lang="en">
-  <head>
-    <base href="./">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
-    <meta name="author" content="Łukasz Holeczek">
-    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-    <title>Gráficos | REC.</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/favicon.jpg">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/favicon.jpg">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/favicon.jpg">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/favicon.jpg">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/favicon.jpg">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/favicon.jpg">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/favicon.jpg">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/favicon.jpg">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/favicon.jpg">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/favicon.jpg">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon.jpg">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon.jpg">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon">
-    <!-- <link rel="manifest" href="assets/favicon/manifest.json"> -->
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <!-- Vendors styles-->
-    <link rel="stylesheet" href="vendors/simplebar/css/simplebar.css">
-    <link rel="stylesheet" href="css/vendors/simplebar.css">
-    <!-- Main styles for this application-->
-    <link href="css/style2.css" rel="stylesheet">
-    <!-- We use those styles to show code examples, you should remove them in your application.-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
-    <link href="css/examples.css" rel="stylesheet">
-    <!-- Global site tag (gtag.js) - Google Analytics-->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      // Shared ID
-      gtag('config', 'UA-118965717-3');
-      // Bootstrap ID
-      gtag('config', 'UA-118965717-5');
-    </script>
-    <link href="vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
-      <div class="sidebar-brand d-none d-md-flex">
-        <div class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-          <img src="assets/brand/favicon.png " alt="" style="height: 70" width="170">
-        </div>
-        <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
-          <use xlink:href="assets/brand/coreui.svg#signet"></use>
-        </svg>
+<head>
+  <base href="./">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+  <meta name="author" content="Łukasz Holeczek">
+  <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+  <title>Gráficos | REC.</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/favicon.jpg">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/favicon.jpg">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/favicon.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/favicon.jpg">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/favicon.jpg">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/favicon.jpg">
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/favicon.jpg">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/favicon.jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon">
+  <!-- <link rel="manifest" href="assets/favicon/manifest.json"> -->
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Vendors styles-->
+  <link rel="stylesheet" href="vendors/simplebar/css/simplebar.css">
+  <link rel="stylesheet" href="css/vendors/simplebar.css">
+  <!-- Main styles for this application-->
+  <link href="css/style2.css" rel="stylesheet">
+  <!-- We use those styles to show code examples, you should remove them in your application.-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
+  <link href="css/examples.css" rel="stylesheet">
+  <!-- Global site tag (gtag.js) - Google Analytics-->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    // Shared ID
+    gtag('config', 'UA-118965717-3');
+    // Bootstrap ID
+    gtag('config', 'UA-118965717-5');
+  </script>
+  <link href="vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+    <div class="sidebar-brand d-none d-md-flex">
+      <div class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
+        <img src="assets/brand/favicon.png " alt="" style="height: 70" width="170">
       </div>
-      <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
-        <li class="nav-title">Componentes</li>
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-            <svg class="nav-icon">
-              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
+      <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
+        <use xlink:href="assets/brand/coreui.svg#signet"></use>
+      </svg>
+    </div>
+    <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+      <li class="nav-title">Componentes</li>
+      <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+          <svg class="nav-icon">
+            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
           </svg>Dashboards</a>
         <ul class="nav-group-items">
-          <li class="nav-item"><a class="nav-link" href="index.html"><span class="nav-icon"></span>Dashboard Inicial</a></li>
-          <li class="nav-item"><a class="nav-link" href="dash-gerente-matriz.html"><span class="nav-icon"></span>Gerente(Matriz)</a></li>
-          <li class="nav-item"><a class="nav-link" href="dash-gerente-filial.html"><span class="nav-icon"></span>Gerente(Filial)</a></li>
-          <li class="nav-item"><a class="nav-link" href="dash-analista.html"><span class="nav-icon"></span>Analista(Filial)</a></li>
-          <li class="nav-item"><a class="nav-link" href="dash-tecnico.html"><span class="nav-icon"></span>Tecnico(Filial)</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html"><span class="nav-icon"></span>Dashboard Inicial</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="dash-gerente-matriz.html"><span
+                class="nav-icon"></span>Gerente(Matriz)</a></li>
+          <li class="nav-item"><a class="nav-link" href="dash-gerente-filial.html"><span
+                class="nav-icon"></span>Gerente(Filial)</a></li>
+          <li class="nav-item"><a class="nav-link" href="dash-analista.html"><span
+                class="nav-icon"></span>Analista(Filial)</a></li>
+          <li class="nav-item"><a class="nav-link" href="dash-tecnico.html"><span
+                class="nav-icon"></span>Tecnico(Filial)</a></li>
         </ul>
       </li>
-        <li class="nav-title">Cadastro</li> 
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-            <svg class="nav-icon">
-              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-star"></use>
-            </svg> Opções</a>
-          <ul class="nav-group-items">
-            <li class="nav-item"><a class="nav-link" href="../sala.html" target="_top">
-                <svg class="nav-icon">
-                  <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
-                </svg> Cadastro de sala</a></li>  
-        </li>
-          </a></li>
-      </ul>    
-      <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
-    </div>
-    <div class="wrapper d-flex flex-column min-vh-100 bg-light">
-      <header class="header header-sticky mb-4">
-        <div class="container-fluid">
-         
-            <svg width="118" height="46" alt="CoreUI Logo">
-              <use xlink:href="assets/brand/coreui.svg#full"></use>
-            </svg><h2>Dashboard | Gerente Matriz</h2></a>
-          
-          <ul class="header-nav ms-3">
-            <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <div class="avatar avatar-md"><img class="avatar-img" src="assets/img/avatars/fernando.jfif" alt="user@email.com"></div>
-              </a>
-              <div class="dropdown-menu dropdown-menu-end pt-0">
-                <div class="dropdown-header bg-light py-2">
-                  <div class="fw-semibold">Conta</div>
-                </div><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
-                  </svg> Atualizações<span class="badge badge-sm bg-info ms-2">42</span></a><a class="dropdown-item" href="#">
-                  <svg class="icon me-2">
-                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-envelope-open"></use>
-                  </svg> Mensagens<span class="badge badge-sm bg-success ms-2">42</span></a><a class="dropdown-item" href="#">
-                 
+      <li class="nav-title">Cadastro</li>
+      <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+          <svg class="nav-icon">
+            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-star"></use>
+          </svg> Opções</a>
+        <ul class="nav-group-items">
+          <li class="nav-item"><a class="nav-link" href="../sala.html" target="_top">
+              <svg class="nav-icon">
+                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+              </svg> Cadastro de sala</a></li>
+      </li>
+      </a></li>
+    </ul>
+    <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+  </div>
+  <div class="wrapper d-flex flex-column min-vh-100 bg-light">
+    <header class="header header-sticky mb-4">
+      <div class="container-fluid">
+
+        <svg width="118" height="46" alt="CoreUI Logo">
+          <use xlink:href="assets/brand/coreui.svg#full"></use>
+        </svg>
+        <h2>Dashboard | Gerente Matriz</h2></a>
+
+        <ul class="header-nav ms-3">
+          <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button"
+              aria-haspopup="true" aria-expanded="false">
+              <div class="avatar avatar-md"><img class="avatar-img" src="assets/img/avatars/fernando.jfif"
+                  alt="user@email.com"></div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end pt-0">
+              <div class="dropdown-header bg-light py-2">
+                <div class="fw-semibold">Conta</div>
+              </div><a class="dropdown-item" href="#">
+                <svg class="icon me-2">
+                  <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
+                </svg> Atualizações<span class="badge badge-sm bg-info ms-2">42</span></a><a class="dropdown-item"
+                href="#">
+                <svg class="icon me-2">
+                  <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-envelope-open"></use>
+                </svg> Mensagens<span class="badge badge-sm bg-success ms-2">42</span></a><a class="dropdown-item"
+                href="#">
+
                 <div class="dropdown-header bg-light py-2">
                   <div class="fw-semibold">Modificações</div>
                 </div><a class="dropdown-item" href="#">
@@ -131,152 +143,188 @@
                   </svg> Configurações</a><a href="#">
                   <ul class="icon me-2">
                     <a class="nav-link" href="../login.html"></svg> Sair</a>
-              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="header-divider"></div>
+      <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb my-0 ms-2">
+            <li class="breadcrumb-item">
+              <!-- if breadcrumb is single--><span>Início</span>
             </li>
-          </ul>
-        </div>
-        <div class="header-divider"></div>
-        <div class="container-fluid">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb my-0 ms-2">
-              <li class="breadcrumb-item">
-                <!-- if breadcrumb is single--><span>Início</span>
-              </li>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <button class="nav-link" href="../dashboard/dash-listamatriz.html">Lista de Usuarios</button>
-            </ol>
-          </nav>
-        </div>
-      </header>
-      <div class="body flex-grow-1 px-3">
-        <div class="container-lg">
-          <div class="row">
-            <div class="col-sm-6 col-lg-3">
-            </div>
-            <!-- /.col-->
-            <!-- /.col-->
-            <!-- /.col-->
-            <!-- /.col-->
+          </ol>
+        </nav>
+      </div>
+    </header>
+    <div class="body flex-grow-1 px-3">
+      <div class="container-lg">
+        <div class="row">
+          <div class="col-sm-6 col-lg-3">
           </div>
-          <!-- /.row-->
-          <div class="qtd-maq">Quantidade de Totens nas Filias</div>
-            <div class="col-sm-6 col-lg-3">
-              <div class="card mb-4 text-white bg-danger">
-                <div class="card-body pb-0 d-flex justify-content-between align-items-start">
-                  <div>
-                    <div class="fs-4 fw-semibold">Totens cadastrados</div>
-                  <div>Qtd:</div>
-                </div>
-              </div>
-              <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;" id="teste.innerHTML">
-                  
-              </div>
-            </div>
+          <!-- /.col-->
+          <!-- /.col-->
+          <!-- /.col-->
+          <!-- /.col-->
         </div>
-          </div>
-    <!-- CoreUI and necessary plugins-->
-    <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
-    <script src="vendors/simplebar/js/simplebar.min.js"></script>
-    <!-- Plugins and scripts required by this view-->
-    <script src="vendors/chart.js/js/chart.min.js"></script>
-    <script src="vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>
-    <script src="vendors/@coreui/utils/js/coreui-utils.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+        <!-- /.row-->
+        <div class="qtd-maq"><h3>Quantidade de chamados no Atm</h3></div>
+        </div>
+
+        <div class="chamados1">
+          <canvas id="chartChamados"></canvas>
+        </div>
+      </div>
+      <!-- CoreUI and necessary plugins-->
+      <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+      <script src="vendors/simplebar/js/simplebar.min.js"></script>
+      <!-- Plugins and scripts required by this view-->
+      <script src="vendors/chart.js/js/chart.min.js"></script>
+      <script src="vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>
+      <script src="vendors/@coreui/utils/js/coreui-utils.js"></script>
+      <script src="js/main.js"></script>
+</body>
+
 </html>
 <script>
-  
 
-  var vetor_nomeUsu = []
-  var vetor_emailUsu = []
-  var vetor_fkLic = []
-  
-  function listar2(idUsuario) {
-    fetch(`/usuario/listar2/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
-      if (response.ok) {
-        response.json().then(function (resposta) {
-          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-          console.log(resposta)
-          resposta.reverse();
-          resposta.forEach(element => {
-            vetor_nomeUsu.push(element.vetor_nomeUsu.slice(11))
-          });
-          resposta.forEach(element => {
-            vetor_emailUsu.push(element.vetor_emailUsu.slice(11))
-          });
-          resposta.forEach(element => {
-            vetor_fkLic.push(element.vetor_fkLic.slice(11))
-          });
-          // PlotarGrafico(resposta, fkTorre);
-        });
-      } else {
-        console.error('Nenhum dado encontrado ou erro na API');
-      }
+  vetor_Atm = []
+
+  fetch("/usuarios/listarAtm", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      fkFilialServer: sessionStorage.ID_FILIAL,
     })
-      .catch(function (error) {
-        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-      });
-  }
+  }).then(function (resposta) {
+    console.log("ESTOU NO THEN DO entrar()!")
 
-  var vetor_maq = []
+    if (resposta.ok) {
+      console.log(resposta);
 
-  function listarMaq(fkFilial) {
-    fetch(`/usuario/listarMaq/${fkFilial}`, { cache: 'no-store' }).then(function (response) {
-      if (response.ok) {
-        response.json().then(function (resposta) {
-          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-          console.log(resposta)
-          resposta.reverse();
-          resposta.forEach(element => {
-            vetor_maq.push(element.vetor_maq.slice(11))
-          });
-          // PlotarGrafico(resposta, fkTorre);
+      resposta.json().then(json => {
+        // console.log(json);
+        // console.log(JSON.stringify(json));
+        json.forEach(element => {
+          vetor_Atm.push(element.idAtm)
         });
-      } else {
-        console.error('Nenhum dado encontrado ou erro na API');
-      }
-    })
-      .catch(function (error) {
-        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        console.log(vetor_Atm)
       });
-      teste.innerHTML = vetor_maq
-  }
 
-  window.onload = listarMaq();
-    var vetor_Filial = []
-    var fkFilial = sessionStorage.ID_FILIAL;
-    var filial;
-    function ObterFilial(fkFilial) {
-      fetch("/usuarios/ObterFilial", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          fkFilialServer: fkFilial,
-        })
-      }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!")
-  
-        if (resposta.ok) {
-          console.log(resposta);
-  
-          resposta.json().then(json => {
-            console.log(json);
-            console.log(JSON.stringify(json));
-  
-            json.forEach(element => {
-              vetor_Filial.push(element.fkFilial)
-            });
-          });
-        }
-      }).catch(function (erro) {
-        console.log("ERRO: " + erro);
+
+    } else {
+
+      console.log("Houve um erro ao tentar realizar o login!");
+    }
+
+  }).catch(function (erro) {
+    console.log(erro);
+  })
+
+
+
+</script>
+<script>
+
+  var vetor_alerta = []
+  var vetor_emergencial = []
+  var vetor_critico = []
+  var fkAtm = 1
+
+  listarCriticidade(fkAtm, 'Alerta')
+  listarCriticidade(fkAtm, 'Emergencial')
+  listarCriticidade(fkAtm, 'Critico')
+
+  function listarCriticidade(id, criticidade) {
+    
+    fetch("/usuarios/listarCriticidade", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        fkAtmServer: id,
+        criticidadeServer: criticidade,
       })
-  
-      setTimeout(() => PlotarRegistro(fkFilial), 3000);
-  
-    } 
+    }).then(function (resposta) {
+      console.log("ESTOU NO THEN DO entrar()!")
 
-  
+      if (resposta.ok) {
+        console.log(resposta);
+
+        resposta.json().then(json => {
+          // console.log(json);
+          // console.log(JSON.stringify(json));
+          json.forEach(element => {
+            if (criticidade == 'Alerta') {
+              vetor_alerta.push(element)
+            } else if (criticidade == 'Emergencial') {
+              vetor_emergencial.push(element)
+            } else if (criticidade == 'Critico') {
+              vetor_critico.push(element)
+            }
+          });
+        });
+
+
+      } else {
+
+        console.log("Houve um erro ao tentar realizar o login!");
+      }
+
+    }).catch(function (erro) {
+      console.log(erro);
+    })
+      setTimeout(() => plotarGraficoChamado(), 3000);
+  }
+
+
+</script>
+<script>
+
+ 
+
+
+  function plotarGraficoChamado() {
+    var numAlerta = vetor_alerta.length
+  var numEmergencial = vetor_emergencial.length
+  var numCritico = vetor_critico.length   
+    const labels = ['Alerta', 'Emergencial', 'Critico']
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'Chamados',
+        data: [numAlerta, numEmergencial, numCritico],
+        backgroundColor: [
+          'rgb(0, 0, 255)',
+          'rgb(0, 128, 255)',
+          'rgb(0, 191, 255)'
+        ],
+        borderColor: [
+          'rgb(0, 0, 0)',
+          'rgb(0, 0, 0)',
+          'rgb(0, 0, 0)'
+        ],
+        borderWidth: 1
+      }]
+    };
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      },
+    };
+    const myChart = new Chart(
+      document.getElementById('chartChamados'),
+      config
+    );
+  }
 </script>

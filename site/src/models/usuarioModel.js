@@ -31,13 +31,13 @@ function cadastrar(fkFilial, fkCredencial, nomeUsuario, email, senha) {
     return database.executar(instrucao);
 }
 
-function alertas(componente,metrica,empresa,criticidade) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():",componente,metrica,empresa,criticidade);
+function alertas(componente,metrica,empresa,criticidade,fkAtm) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():",componente,metrica,empresa,criticidade,fkAtm);
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO Chamados (Empresa, Componente, Metrica, Criticidade, DataHora) VALUES ('${empresa}', '${componente}', '${metrica}', '${criticidade}', GETDATE());
+        INSERT INTO Chamados (Empresa, Componente, Metrica, Criticidade, DataHora, fkAtm) VALUES ('${empresa}', '${componente}', '${metrica}', '${criticidade}', GETDATE() , '${fkAtm}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -71,25 +71,35 @@ function listarMaq(fkFilial){
 }
 
 
-// function listar3(idEmpresa){
-//     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar3()", idEmpresa);
-//     var instrucao = `
-//         SELECT idFilial, nomeFantasia, from fkEmpresa = '${idEmpresa}';
-//     `;
-//     console.log("Executando a instrução SQL: \n" + instrucao);
-//     return database.executar(instrucao);
-// }
+function listarChamados(fkFilial){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarMaq()",fkFilial);
+    var instrucao = `
+        SELECT razaoSocial from Empresa where Filial = '${fkFilial}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
 
 
-// function entrar2(fkFilial) {
-//     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar2(): ", fkFilial)
-//     var instrucao = `
-//         select idEmpresa FROM Empresa where fkFilial = '${fkFilial}';
-//     `;
-//     console.log("Executando a instrução SQL: \n" + instrucao);
-//     return database.executar(instrucao);
-// }
 
+function listarAtm(fkFilial){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarMaq()",fkFilial);
+    var instrucao = `
+        SELECT * from Atm where fkfilial = ${fkFilial};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+
+function listarCriticidade(fkAtm,criticidade){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarMaq()",fkAtm, criticidade);
+    var instrucao = `
+        SELECT * from Chamados where fkAtm = '${fkAtm}' and Criticidade = '${criticidade}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
 
 module.exports = {
     entrar,
@@ -98,7 +108,8 @@ module.exports = {
     alertas,
     ObterFilial,
     listar2,
-    listarMaq
-    // entrar2,
-    // listar3
+    listarMaq,
+    listarChamados,
+    listarAtm,
+    listarCriticidade
 };

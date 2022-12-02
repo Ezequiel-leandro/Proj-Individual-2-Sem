@@ -111,11 +111,13 @@ function alertas(req, res) {
     var metrica = req.body.metricaServer;
     var empresa = req.body.empresaServer;
     var criticidade = req.body.criticidadeServer;
+    var fkAtm = req.body.fkAtmServer;
     
     console.log(componente)
     console.log(metrica)
     console.log(empresa)
     console.log(criticidade)
+    console.log(fkAtm)
     // Faça as validações dos valores
     if (componente == undefined) {
         res.status(400).send("Seu componente está undefined!");
@@ -125,10 +127,12 @@ function alertas(req, res) {
         res.status(400).send("Seu empresa está undefined!");
     } else if (criticidade == undefined) {
         res.status(400).send("Sua criticidade está undefined!");
+    } else if (fkAtm == undefined) {
+        res.status(400).send("Seu Atm está undefined!");
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.alertas(componente,metrica,empresa,criticidade)
+        usuarioModel.alertas(componente,metrica,empresa,criticidade,fkAtm)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -225,73 +229,103 @@ usuarioModel.ObterNomeEmp(fkEmpresa)
 }}
 
 
-
-
-
-// function entrar2(req, res) {
-//     var fkFilial = req.body.fkFilialServer;
-
-//     if (fkFilial == undefined) {
-//         res.status(400).send("Id da Filial não encontrado");
-//     } else {
+function listarChamados(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var fkFilial = req.body.fkFilialServer;
+    
+    console.log(fkFilial)
+    // Faça as validações dos valores
+    if (fkFilial == undefined) {
+        res.status(400).send("Sua filial undefined!");
+    } else {
         
-//         usuarioModel.entrar2(fkFilial)
-//             .then(
-//                 function (resultado) {
-//                     console.log(`\nResultados encontrados: ${resultado.length}`);
-//                     console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.listarChamados(fkFilial)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
 
-//                     if (resultado.length == 1) {
-//                         console.log(resultado);
-//                         res.json(resultado[0]);
-//                     } else if (resultado.length == 0) {
-//                         res.status(403).send("Empresa não encontrada");
-//                     } 
-//                 }
-//             ).catch(
-//                 function (erro) {
-//                     console.log(erro);
-//                     console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
-//                     res.status(500).json(erro.sqlMessage);
-//                 }
-//             );
-//     }
+function listarAtm(req, res) {
+    var fkFilial = req.body.fkFilialServer;
 
-// }
-
-// function listar3(req, res) {
-//     var idFilial = req.body.idFilialServer;
-//     var nomeFantasia = req.body.nomeFantasiaServer;
-
-//     if (idFilial == undefined) {
-//         res.status(400).send("Id da Filial não encontrado");
-//     } else if (nomeFantasia == undefined) {
-//         res.status(400).send("NomeFantasia não encontrado");
-//     } else {
+    if (fkFilial == undefined) {
+        res.status(400).send("Sua filial está undefined!");
+    } else {
         
-//         usuarioModel.listar3(idFilial)
-//             .then(
-//                 function (resultado) {
-//                     console.log(`\nResultados encontrados: ${resultado.length}`);
-//                     console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+        usuarioModel.listarAtm(fkFilial)
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
 
-//                     if (resultado.length == 1) {
-//                         console.log(resultado);
-//                         res.json(resultado[0]);
-//                     } else if (resultado.length == 0) {
-//                         res.status(403).send("Filial não encontrada");
-//                     } 
-//                 }
-//             ).catch(
-//                 function (erro) {
-//                     console.log(erro);
-//                     console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
-//                     res.status(500).json(erro.sqlMessage);
-//                 }
-//             );
-//     }
+                    if (resultado.length > 1) {
+                        console.log(resultado);
+                        res.json(resultado);
+                    } else if (resultado.length == 0) {
+                        res.status(403).send("Email e/ou senha inválido(s)");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
 
-// }
+}
+
+
+function listarCriticidade(req, res) {
+    var fkAtm = req.body.fkAtmServer;
+    var criticidade = req.body.criticidadeServer
+
+    if (fkAtm == undefined) {
+        res.status(400).send("Sua Atm está undefined!");
+    } else if (criticidade == undefined) {
+        res.status(400).send("Sua criticidade está undefined!");
+    } else {
+        
+        usuarioModel.listarCriticidade(fkAtm,criticidade)
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    if (resultado.length > 1) {
+                        console.log(resultado);
+                        res.json(resultado);
+                    } else if (resultado.length == 0) {
+                        res.status(403).send("Email e/ou senha inválido(s)");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+}
+
+
+
 
 module.exports = {
     entrar,
@@ -301,6 +335,8 @@ module.exports = {
     alertas,
     listar2,
     ObterFilial,
-    listarMaq
-    // entrar2
+    listarMaq,
+    listarChamados,
+    listarAtm,
+    listarCriticidade
 }
