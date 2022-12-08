@@ -33,7 +33,7 @@ function entrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
-        
+
         usuarioModel.entrar(email, senha)
             .then(
                 function (resultado) {
@@ -67,7 +67,7 @@ function cadastrar(req, res) {
     var nome = req.body.nomeServer;
     var email = req.body.emailServer;
     var senha = req.body.passwordServer;
-    
+
     console.log(nome)
     console.log(email)
     console.log(senha)
@@ -85,7 +85,7 @@ function cadastrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
     } else {
-        
+
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.cadastrar(fkFilial, fkCredencial, nome, email, senha)
             .then(
@@ -112,7 +112,7 @@ function alertas(req, res) {
     var empresa = req.body.empresaServer;
     var criticidade = req.body.criticidadeServer;
     var fkAtm = req.body.fkAtmServer;
-    
+
     console.log(componente)
     console.log(metrica)
     console.log(empresa)
@@ -130,9 +130,9 @@ function alertas(req, res) {
     } else if (fkAtm == undefined) {
         res.status(400).send("Seu Atm está undefined!");
     } else {
-        
+
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.alertas(componente,metrica,empresa,criticidade,fkAtm)
+        usuarioModel.alertas(componente, metrica, empresa, criticidade, fkAtm)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -150,95 +150,80 @@ function alertas(req, res) {
     }
 }
 
-function listar2(req, res) {
-    usuarioModel.listar2()
-        .then(function (resultado) {
-            if (resultado.length > 0) {
-                res.status(200).json(resultado);
-            } else {
-                res.status(204).send("Nenhum resultado encontrado!")
-            }
-        }).catch(
-            function (erro) {
-                console.log(erro);
-                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
-                res.status(500).json(erro.sqlMessage);
-            }
-        );
-}
-
 
 
 function ObterFilial(req, res) {
     var fkFilial = req.body.fkFilialServer;
-    
-    if(fkFilial == undefined) {
-        res.status(400).send("Seu fkEmpresa está undefined!");
-    }else {
-        
-usuarioModel.ObterNomeEmp(fkEmpresa)
-    .then(
-        function (resultado) {
-            console.log(`\nResultados encontrados: ${resultado.length}`);
-            console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
 
-            if (resultado.length != 0) {
-                console.log(resultado);
-                res.json(resultado);
-            } else if (resultado.length == 0) {
-                res.status(403).send("Não tem torre");
-            }
-        }
-    ).catch(
-        function (erro) {
-            console.log(erro);
-            console.log("\nHouve um erro ao realizar o encontrar nome emp! Erro: ", erro.sqlMessage);
-            res.status(500).json(erro.sqlMessage);
-        }
-    );
-}}
+    if (fkFilial == undefined) {
+        res.status(400).send("Seu fkEmpresa está undefined!");
+    } else {
+
+        usuarioModel.ObterNomeEmp(fkEmpresa)
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    if (resultado.length != 0) {
+                        console.log(resultado);
+                        res.json(resultado);
+                    } else if (resultado.length == 0) {
+                        res.status(403).send("Não tem torre");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar o encontrar nome emp! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
 
 
 function listarMaq(req, res) {
     var fkFilial = req.body.fkFilialServer;
-    
-    if(fkFilial == undefined) {
-        res.status(400).send("Seu fkEmpresa está undefined!");
-    }else {
-        
-usuarioModel.ObterNomeEmp(fkEmpresa)
-    .then(
-        function (resultado) {
-            console.log(`\nResultados encontrados: ${resultado.length}`);
-            console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
 
-            if (resultado.length != 0) {
-                console.log(resultado);
-                res.json(resultado);
-            } else if (resultado.length == 0) {
-                res.status(403).send("Não tem torre");
-            }
-        }
-    ).catch(
-        function (erro) {
-            console.log(erro);
-            console.log("\nHouve um erro ao realizar o encontrar nome emp! Erro: ", erro.sqlMessage);
-            res.status(500).json(erro.sqlMessage);
-        }
-    );
-}}
+    if (fkFilial == undefined) {
+        res.status(400).send("Seu fkEmpresa está undefined!");
+    } else {
+
+        usuarioModel.ObterNomeEmp(fkEmpresa)
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    if (resultado.length != 0) {
+                        console.log(resultado);
+                        res.json(resultado);
+                    } else if (resultado.length == 0) {
+                        res.status(403).send("Não tem torre");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar o encontrar nome emp! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
 
 
 function listarChamados(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var fkFilial = req.body.fkFilialServer;
-    
+
     console.log(fkFilial)
     // Faça as validações dos valores
     if (fkFilial == undefined) {
         res.status(400).send("Sua filial undefined!");
     } else {
-        
+
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.listarChamados(fkFilial)
             .then(
@@ -264,7 +249,7 @@ function listarAtm(req, res) {
     if (fkFilial == undefined) {
         res.status(400).send("Sua filial está undefined!");
     } else {
-        
+
         usuarioModel.listarAtm(fkFilial)
             .then(
                 function (resultado) {
@@ -299,8 +284,8 @@ function listarCriticidade(req, res) {
     } else if (criticidade == undefined) {
         res.status(400).send("Sua criticidade está undefined!");
     } else {
-        
-        usuarioModel.listarCriticidade(fkAtm,criticidade)
+
+        usuarioModel.listarCriticidade(fkAtm, criticidade)
             .then(
                 function (resultado) {
                     console.log(`\nResultados encontrados: ${resultado.length}`);
@@ -327,16 +312,38 @@ function listarCriticidade(req, res) {
 
 
 
+
+
+function listaUsuarios(req, res) {
+
+    usuarioModel.listaUsuarios()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                console.log(resultado);
+                res.json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao selecionar os usuarios! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
     testar,
     alertas,
-    listar2,
     ObterFilial,
     listarMaq,
     listarChamados,
     listarAtm,
-    listarCriticidade
+    listarCriticidade,
+    listaUsuarios
 }

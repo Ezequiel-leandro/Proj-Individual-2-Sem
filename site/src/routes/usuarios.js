@@ -24,14 +24,6 @@ router.post("/alertas", function (req, res) {
     usuarioController.alertas(req, res);
 });
 
-router.get("/listar2", function (req, res) {
-    usuarioController.listar2(req, res);
-});
-
-router.get("/entrar2", function (req, res) {
-    usuarioController.entrar2(req, res);
-});
-
 router.get("/listar3", function (req, res) {
     usuarioController.listar3(req, res);
 });
@@ -51,5 +43,10 @@ router.post("/listarAtm", function (req, res) {
 router.post("/listarCriticidade", function (req, res) {
     usuarioController.listarCriticidade(req, res);
 });
+
+router.post("/listaUsuarios", function (req, res) {
+    usuarioController.listaUsuarios(req, res);
+});
+
 
 module.exports = router;
