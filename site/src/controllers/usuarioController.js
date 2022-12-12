@@ -276,16 +276,14 @@ function listarAtm(req, res) {
 
 
 function listarCriticidade(req, res) {
-    var fkAtm = req.body.fkAtmServer;
+
     var criticidade = req.body.criticidadeServer
 
-    if (fkAtm == undefined) {
-        res.status(400).send("Sua Atm está undefined!");
-    } else if (criticidade == undefined) {
+    if (criticidade == undefined) {
         res.status(400).send("Sua criticidade está undefined!");
     } else {
 
-        usuarioModel.listarCriticidade(fkAtm, criticidade)
+        usuarioModel.listarCriticidade(criticidade)
             .then(
                 function (resultado) {
                     console.log(`\nResultados encontrados: ${resultado.length}`);
@@ -315,22 +313,28 @@ function listarCriticidade(req, res) {
 
 
 function listaUsuarios(req, res) {
+    var fkFilial = req.body.fkFilialServer;
 
-    usuarioModel.listaUsuarios()
-        .then(function (resultado) {
-            if (resultado.length > 0) {
-                console.log(resultado);
-                res.json(resultado);
-            } else {
-                res.status(204).send("Nenhum resultado encontrado!")
-            }
-        }).catch(
-            function (erro) {
-                console.log(erro);
-                console.log("Houve um erro ao selecionar os usuarios! Erro: ", erro.sqlMessage);
-                res.status(500).json(erro.sqlMessage);
-            }
-        );
+    if (fkFilial == undefined) {
+        res.status(400).send("Sua filial está undefined!");
+    } else {
+
+        usuarioModel.listaUsuarios(fkFilial)
+            .then(function (resultado) {
+                if (resultado.length > 0) {
+                    console.log(resultado);
+                    res.json(resultado);
+                } else {
+                    res.status(204).send("Nenhum resultado encontrado!")
+                }
+            }).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("Houve um erro ao selecionar os usuarios! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
 }
 
 

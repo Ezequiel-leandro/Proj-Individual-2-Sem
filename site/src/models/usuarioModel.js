@@ -84,19 +84,19 @@ function listarAtm(fkFilial){
 }
 
 
-function listarCriticidade(fkAtm,criticidade){
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarMaq()",fkAtm, criticidade);
+function listarCriticidade(criticidade){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarMaq()",criticidade);
     var instrucao = `
-        SELECT * from Chamados where fkAtm = '${fkAtm}' and Criticidade = '${criticidade}';
+        SELECT * from Chamados where Criticidade = '${criticidade}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function listaUsuarios(){
+function listaUsuarios(fkFilial){
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listaUsuarios()");
     var instrucao = `
-    select nomeUsuario, emailUsuario, fkLicenca, fkFilial from Usuario
+    select nomeUsuario, emailUsuario, fkLicenca, fkFilial from Usuario  where fkFilial = '${fkFilial}'
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

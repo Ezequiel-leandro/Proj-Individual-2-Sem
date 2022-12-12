@@ -61,147 +61,155 @@
 </head>
 <style>
   body {
-  background-color: #e9eaef;
-  font-family: Helvetica, Arial;
-}
+    background-color: #e9eaef;
+    font-family: Helvetica, Arial;
+  }
 
-h2 {
-  color: #999;
-  font-weight: 400;
-  font-size: 18px;
-  margin-bottom: 15px;
-}
+  h2 {
+    color: #999;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
 
-.container {
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 10px;
-}
+  .container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
 
-.container table {
-  border: 1px solid #d6d6d6;
-  border-collapse: collapse;
-  width: 100%;
-  background-color: #fff;
-}
+  .container table {
+    border: 1px solid #d6d6d6;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+  }
 
-.container table thead {
-  background-color: #ffffff;
-  border: 1px solid #d6d6d6;
-  border-bottom: none;
-}
-.container table thead th {
-  text-transform: capitalize;
-  border-right: 1px solid #d6d6d6;
-  background-color: #f5f5f5;
-  font-size: 12px;
-  font-weight: 600;
-}
+  .container table thead {
+    background-color: #ffffff;
+    border: 1px solid #d6d6d6;
+    border-bottom: none;
+  }
 
-.container table thead th:last-child {
-  border-right: none;
-}
-.container table thead th a {
-  position: relative;
-  text-decoration: none;
-  color: #8693d3;
-  display: block;
-  padding: 10px;
-  font-size: 12px;
-  font-weight: 600;
-  text-align: left;
-  padding-right: 25px;
-}
-.container table thead th a:hover,
-.container table thead th a:focus {
-  background-color: #e2e2e4;
-}
+  .container table thead th {
+    text-transform: capitalize;
+    border-right: 1px solid #d6d6d6;
+    background-color: #f5f5f5;
+    font-size: 12px;
+    font-weight: 600;
+  }
 
-.container table thead th.ascendent_sort,.container table thead th.descendent_sort {
-  background-color: #e3edfd;
-}
+  .container table thead th:last-child {
+    border-right: none;
+  }
 
-.container table thead th.ascendent_sort a:hover,
-.container table thead th.ascendent_sort a:focus,
-.container table thead th.descendent_sort a:hover,
-.container table thead th.descendent_sort a:focus {
-  background-color: transparent;
-}
+  .container table thead th a {
+    position: relative;
+    text-decoration: none;
+    color: #8693d3;
+    display: block;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    padding-right: 25px;
+  }
 
-.container table thead th.ascendent_sort a:before,.container table thead th.descendent_sort a:before {
-  content: '';
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  border: 5px solid transparent;
-}
+  .container table thead th a:hover,
+  .container table thead th a:focus {
+    background-color: #e2e2e4;
+  }
 
-.container table thead th.ascendent_sort a:before {
-  border-bottom-color: #3F51B5;
-  margin-top: -7px;
-}
+  .container table thead th.ascendent_sort,
+  .container table thead th.descendent_sort {
+    background-color: #e3edfd;
+  }
 
-.container table thead th.descendent_sort a:before {
-  border-top-color: #3F51B5;
-  margin-top: -2px;
-}
+  .container table thead th.ascendent_sort a:hover,
+  .container table thead th.ascendent_sort a:focus,
+  .container table thead th.descendent_sort a:hover,
+  .container table thead th.descendent_sort a:focus {
+    background-color: transparent;
+  }
 
-.container table tbody tr {
-  border-top: 1px solid #d6d6d6;
-}
-.container table tbody td {
-  border-right: 1px solid #d6d6d6;
-  font-size: 12px;
-  padding: 10px;
-}
-.container table tbody td:last-child {
-  border-right: none;
-}
+  .container table thead th.ascendent_sort a:before,
+  .container table thead th.descendent_sort a:before {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    border: 5px solid transparent;
+  }
 
-.responsive-table {
-  overflow: auto;
-  border-right: 1px solid #d6d6d6;
-  border-left: 1px solid #d6d6d6;
-}
+  .container table thead th.ascendent_sort a:before {
+    border-bottom-color: #3F51B5;
+    margin-top: -7px;
+  }
 
-.btn {
-  display: inline-block;
-  border: none;
-  padding: 5px;
-  margin-top: 10px;
-  background-color: #2196F3;
-  color: #fff;
-  cursor: pointer;
-}
+  .container table thead th.descendent_sort a:before {
+    border-top-color: #3F51B5;
+    margin-top: -2px;
+  }
 
-.btn:hover,
-.btn:focus {
-  background-color: #1772b3
-}
+  .container table tbody tr {
+    border-top: 1px solid #d6d6d6;
+  }
 
-.loading {
-  display: block;
-  text-align: center;
-  padding: 20px;
-  font-size: 12px;
-}
+  .container table tbody td {
+    border-right: 1px solid #d6d6d6;
+    font-size: 12px;
+    padding: 10px;
+  }
 
-.custom-data {
-  border-top: 1px solid #ccc;
-  margin-top: 10px;
-  padding-top: 10px;
-}
+  .container table tbody td:last-child {
+    border-right: none;
+  }
 
-.custom-data textarea {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  min-width: 100%;
-  min-height: 100px;
-}
+  .responsive-table {
+    overflow: auto;
+    border-right: 1px solid #d6d6d6;
+    border-left: 1px solid #d6d6d6;
+  }
+
+  .btn {
+    display: inline-block;
+    border: none;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: #2196F3;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .btn:hover,
+  .btn:focus {
+    background-color: #1772b3
+  }
+
+  .loading {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+  }
+
+  .custom-data {
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  .custom-data textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 100px;
+  }
 </style>
+
 <body>
   <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
     <div class="sidebar-brand d-none d-md-flex">
@@ -320,8 +328,10 @@ h2 {
         <canvas id="chartChamados"></canvas>
       </div>
 
-      <div class="responsive-table">
-        <div id="dynamic-table"></div>
+      <div class="container">
+        <div class="responsive-table">
+          <div id="dynamic-table"></div>
+        </div>
       </div>
     </div>
     <!-- CoreUI and necessary plugins-->
@@ -375,20 +385,21 @@ h2 {
 
 
 </script>
+<!-- GRAFICO ALERTAS -->
 <script>
-
   var vetor_alerta = []
   var vetor_emergencial = []
   var vetor_critico = []
-  var fkAtm = 1
+  // var fkAtm = 1
 
-  listarCriticidade(fkAtm, 'Alerta')
-  listarCriticidade(fkAtm, 'Emergencial')
-  listarCriticidade(fkAtm, 'Critico')
+  listarCriticidade('Alerta')
+  listarCriticidade('Emergencial')
+  listarCriticidade('Critico')
   setTimeout(() => plotarGraficoChamado(), 3000);
+  setTimeout(() => createTable(), 3000);
 
 
-  function listarCriticidade(id, criticidade) {
+  function listarCriticidade(criticidade) {
 
     fetch("/usuarios/listarCriticidade", {
       method: "POST",
@@ -396,7 +407,6 @@ h2 {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        fkAtmServer: id,
         criticidadeServer: criticidade,
       })
     }).then(function (resposta) {
@@ -429,13 +439,6 @@ h2 {
       console.log(erro);
     })
   }
-
-
-</script>
-<script>
-
-
-
 
   function plotarGraficoChamado() {
     var numAlerta = vetor_alerta.length
@@ -478,18 +481,29 @@ h2 {
   }
 
 </script>
+
+
+
+<!-- TABELA USUARIOS -->
 <script>
-    fetch("/usuarios/listaUsuarios", {
+  fetch("/usuarios/listaUsuarios", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
+    body: JSON.stringify({
+      fkFilialServer: sessionStorage.ID_FILIAL,
+    })
+
   }).then(function (resposta) {
     console.log(resposta)
 
     if (resposta.ok) {
       resposta.json().then(json => {
         console.log(json);
+        json.forEach(element => {
+          firstFile.push(element)
+        });
       });
 
 
@@ -501,374 +515,256 @@ h2 {
   }).catch(function (erro) {
     console.log(erro);
   })
-</script>
 
 
+  var firstFile = [];
 
 
-<script>
-  var firstFile = [
-  {
-    company_name: 'Medline Industries, Inc.',
-    product: 'Benzalkonium Chloride',
-    price: '481.63',
-  },
-  {
-    company_name: 'PD-Rx Pharmaceuticals, Inc.',
-    product: 'Alprazolam',
-    price: '167.62',
-    fda_date_approved: '02/12/2015',
-  },
-  {
-    company_name: 'West-ward Pharmaceutical Corp.',
-    product: 'Flumazenil',
-    fda_date_approved: '23/04/2015',
-  },
-  {
-    company_name: 'HyVee Inc',
-    product: 'Aspirin',
-    price: '218.32',
-    fda_date_approved: '26/07/2015',
-  },
-  {
-    company_name: 'Aurobindo Pharma Limited',
-    product: 'carisoprodol',
-    price: '375.58',
-    fda_date_approved: '28/11/2014',
-  },
-  {
-    company_name: 'Apotex Corp',
-    product: 'Risperidone',
-    price: '213.49',
-    fda_date_approved: '06/11/2015',
-  },
-  {
-    company_name: 'Unit Dose Services',
-    product: 'Lovastatin',
-    price: '169.14',
-    fda_date_approved: '14/09/2015',
-  },
-  {
-    company_name: 'Jubilant HollisterStier LLC',
-    product: 'Dog Hair Canis spp.',
-    fda_date_approved: '31/12/2014',
-  },
-  {
-    company_name: 'AAA Pharmaceutical, Inc.',
-    product:
-      'ACETAMINOPHEN, CHLORPHENIRAMINE MALEATE, DEXTROMETHORPHAN HYDROBROMIDE, and PHENYLEPHRINE HYDROCHLORIDE',
-    price: '183.33',
-    fda_date_approved: '13/12/2015',
-  },
-  {
-    company_name: 'AKG Innovations LLC',
-    product: 'AVOBENZONE, OCTINOXATE, OCTISALATE',
-    fda_date_approved: '22/01/2015',
-  },
-  { company_name: 'hikma Farmaceutica', product: 'Oxytocin' },
-  {
-    company_name: 'prime Packaging, Inc.',
-    product: 'Avobenzone, Homosalate, Octisalate, Octocrylene, Oxybenzone',
-    price: '208.17',
-  },
-  {
-    company_name: 'Davion, Inc',
-    product: 'Triclosan',
-    price: '80.30',
-    fda_date_approved: '13/12/2014',
-  },
-  {
-    company_name: 'CARDINAL HEALTH',
-    product: 'CARBOXYMETHYLCELLULOSE SODIUM, GLYCERIN',
-    price: '330.22',
-    fda_date_approved: '11/08/2015',
-  },
-  {
-    company_name: 'Amgen Inc',
-    product: 'darbepoetin alfa',
-    price: '332.28',
-    fda_date_approved: '01/07/2015',
-  },
-  {
-    company_name: 'Autumn Harp, Inc.',
-    product: 'Salicylic Acid',
-    price: '34.43',
-    fda_date_approved: '25/03/2015',
-  },
-  {
-    company_name: 'American Regent, Inc.',
-    product:
-      'sodium phosphate, monobasic, monohydrate and sodium phosphate, dibasic anhydrous',
-    price: '11.60',
-  },
-  {
-    company_name: 'J. A. Cosmetics U.S. INC',
-    product: 'TITANIUM DIOXIDE',
-    price: '130.90',
-    fda_date_approved: '01/12/2015',
-  },
-  {
-    company_name: 'NATURE REPUBLIC CO., LTD.',
-    product: 'Titanium Dioxide, OCTINOXATE, Zinc Oxide',
-    price: '124.48',
-  },
-  {
-    company_name: 'L. Perrigo Company',
-    product: 'Dextromethorphan Hydrobromide, Guaifenesin',
-    price: '73.09',
-    fda_date_approved: '03/02/2016',
-  },
-];
+  function createTable() {
+    console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+    var divId = 'dynamic-table';
+    var div = document.getElementById(divId);
 
 
-function createTable() {
-  console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
-  var divId = 'dynamic-table';
-  var div = document.getElementById(divId);
+    div.innerHTML = '<span class="loading">Loading...</span>';
 
-  document.getElementById('customData').value = '';
+    setTimeout(() => {
+      div.innerHTML = '';
 
-  div.innerHTML = '<span class="loading">Loading...</span>';
+      var tableId = 'sortable';
+      var json = firstFile;
+      var table = new DynamicTable(tableId, json);
+      div.appendChild(table);
 
-  setTimeout(() => {
-    div.innerHTML = '';
+      new SortableTable(tableId);
+    }, 500);
+  }
 
-    var tableId = 'sortable';
-    var json = firstFile;
-    var table = new DynamicTable(tableId, json);
-    div.appendChild(table);
+  function createTableWithData() {
+    var divId = 'dynamic-table';
+    var div = document.getElementById(divId);
 
-    new SortableTable(tableId);
-  }, 500);
-}
+    div.innerHTML = '<span class="loading">Loading...</span>';
 
-function createTableWithData() {
-  var divId = 'dynamic-table';
-  var div = document.getElementById(divId);
+    setTimeout(() => {
+      div.innerHTML = '';
 
-  div.innerHTML = '<span class="loading">Loading...</span>';
+      var tableId = 'sortable';
+      var json = document.getElementById('customData').value.trim() || '[]';
 
-  setTimeout(() => {
-    div.innerHTML = '';
+      try {
+        json = JSON.parse(json);
 
-    var tableId = 'sortable';
-    var json = document.getElementById('customData').value.trim() || '[]';
+        if (json.length > 0) {
+          var table = new DynamicTable(tableId, json);
+          div.appendChild(table);
 
-    try {
-      json = JSON.parse(json);
-
-      if (json.length > 0) {
-        var table = new DynamicTable(tableId, json);
-        div.appendChild(table);
-
-        new SortableTable(tableId);
-      } else {
-        div.innerHTML = 'Empty collection of data detected';
+          new SortableTable(tableId);
+        } else {
+          div.innerHTML = 'Empty collection of data detected';
+        }
+      } catch (error) {
+        div.innerHTML = 'Invalid data. Please validate your data first.';
       }
-    } catch (error) {
-      div.innerHTML = 'Invalid data. Please validate your data first.';
+    }, 100);
+  }
+
+
+
+  /**
+   * *******************************************************************
+   * **************************** SOLUTION ****************************
+   * *******************************************************************
+   */
+
+  /**
+   * *******************************************************************
+   * HELPERS: helper functions I use in the solutions
+   * *******************************************************************
+   */
+
+  // Sort helper
+  function sortFn(a, b) {
+    if (a.value < b.value) {
+      return -1;
     }
-  }, 100);
-}
 
-window.onload = function() {
-  createTable();
-};
+    if (a.value > b.value) {
+      return 1;
+    }
 
-/**
- * *******************************************************************
- * **************************** SOLUTION ****************************
- * *******************************************************************
- */
-
-/**
- * *******************************************************************
- * HELPERS: helper functions I use in the solutions
- * *******************************************************************
- */
-
-// Sort helper
-function sortFn(a, b) {
-  if (a.value < b.value) {
-    return -1;
+    return 0;
   }
 
-  if (a.value > b.value) {
-    return 1;
+  // Sort the list
+  function sortList(list, direction) {
+    var sorted = list.sort(sortFn);
+
+    if (direction === -1) {
+      list.reverse();
+    }
+
+    return sorted;
   }
 
-  return 0;
-}
+  // Event triggered on heading anchor click (which will trigger the sort)
+  function onHeadigClick(that, cellIndex) {
+    return function () {
+      that.sortColumn(this, cellIndex);
 
-// Sort the list
-function sortList(list, direction) {
-  var sorted = list.sort(sortFn);
-
-  if (direction === -1) {
-    list.reverse();
+      return false;
+    };
   }
 
-  return sorted;
-}
+  // Create anchor for each th
+  function createAnchor(html, index) {
+    var a = document.createElement('a');
+    a.href = '#';
+    a.innerHTML = html;
+    a.onclick = onHeadigClick(this, index);
 
-// Event triggered on heading anchor click (which will trigger the sort)
-function onHeadigClick(that, cellIndex) {
-  return function() {
-    that.sortColumn(this, cellIndex);
+    return a;
+  }
 
-    return false;
-  };
-}
+  /**
+   * *******************************************************************
+   * TASKS: from here are the real task solutions
+   * *******************************************************************
+   */
 
-// Create anchor for each th
-function createAnchor(html, index) {
-  var a = document.createElement('a');
-  a.href = '#';
-  a.innerHTML = html;
-  a.onclick = onHeadigClick(this, index);
+  /**
+   * Solution for task A. Generate a table with dymanic headers based on the data
+   * @param {string} id the id the table will have
+   * @param {array} data json data
+   *
+   * @return {HTMLElement} resulting table
+   */
+  function DynamicTable(tableId, data) {
+    var headings = data.reduce(function (result, item) {
+      var item_headings = Object.keys(item);
 
-  return a;
-}
+      item_headings.forEach(function (heading) {
+        if (result.indexOf(heading) === -1) {
+          result.push(heading);
+        }
+      });
 
-/**
- * *******************************************************************
- * TASKS: from here are the real task solutions
- * *******************************************************************
- */
+      return result;
+    }, []);
 
-/**
- * Solution for task A. Generate a table with dymanic headers based on the data
- * @param {string} id the id the table will have
- * @param {array} data json data
- *
- * @return {HTMLElement} resulting table
- */
-function DynamicTable(tableId, data) {
-  var headings = data.reduce(function(result, item) {
-    var item_headings = Object.keys(item);
+    var table = document.createElement('table');
+    var thead = document.createElement('thead');
+    var tbody = document.createElement('tbody');
+    var thead_tr = document.createElement('tr');
 
-    item_headings.forEach(function(heading) {
-      if (result.indexOf(heading) === -1) {
-        result.push(heading);
-      }
+    headings.forEach(function (heading) {
+      var cell = document.createElement('th');
+      cell.innerHTML = heading;
+
+      thead_tr.appendChild(cell);
     });
 
-    return result;
-  }, []);
+    data.forEach(function (item) {
+      var tbody_tr = document.createElement('tr');
 
-  var table = document.createElement('table');
-  var thead = document.createElement('thead');
-  var tbody = document.createElement('tbody');
-  var thead_tr = document.createElement('tr');
+      headings.forEach(function (heading) {
+        var cell = document.createElement('td');
+        cell.innerHTML = item[heading] || '';
 
-  headings.forEach(function(heading) {
-    var cell = document.createElement('th');
-    cell.innerHTML = heading;
+        tbody_tr.appendChild(cell);
+      });
 
-    thead_tr.appendChild(cell);
-  });
-
-  data.forEach(function(item) {
-    var tbody_tr = document.createElement('tr');
-
-    headings.forEach(function(heading) {
-      var cell = document.createElement('td');
-      cell.innerHTML = item[heading] || '';
-
-      tbody_tr.appendChild(cell);
+      tbody.appendChild(tbody_tr);
     });
 
-    tbody.appendChild(tbody_tr);
-  });
+    thead.appendChild(thead_tr);
+    table.appendChild(thead);
+    table.appendChild(tbody);
+    table.id = tableId;
 
-  thead.appendChild(thead_tr);
-  table.appendChild(thead);
-  table.appendChild(tbody);
-  table.id = tableId;
+    return table;
+  }
 
-  return table;
-}
+  /**
+   * Solution for task B. reate a new instance of sortableTable tied to a table
+   * @param {string} id table id
+   */
+  function SortableTable(id) {
+    this.table = document.getElementById(id);
+    this.lastSortedTh = null;
 
-/**
- * Solution for task B. reate a new instance of sortableTable tied to a table
- * @param {string} id table id
- */
-function SortableTable(id) {
-  this.table = document.getElementById(id);
-  this.lastSortedTh = null;
+    if (this.table && this.table.nodeName === 'TABLE') {
+      var headings = this.table.tHead.rows[0].cells;
 
-  if (this.table && this.table.nodeName === 'TABLE') {
+      Object.assign([], headings).forEach(
+        function (heading, index) {
+          if (heading.className.match(/ascendent_sort|descendent_sort/)) {
+            this.lastSortedTh = heading;
+          }
+        }.bind(this),
+      );
+
+      this.setTableSortable();
+    }
+  }
+
+  SortableTable.prototype.setTableSortable = function () {
     var headings = this.table.tHead.rows[0].cells;
 
     Object.assign([], headings).forEach(
-      function(heading, index) {
-        if (heading.className.match(/ascendent_sort|descendent_sort/)) {
-          this.lastSortedTh = heading;
-        }
+      function (heading, index) {
+        var sortAnchor = createAnchor.bind(this);
+        var html = heading.innerHTML;
+        heading.innerHTML = '';
+        heading.appendChild(sortAnchor(html, index));
       }.bind(this),
     );
+  };
 
-    this.setTableSortable();
-  }
-}
+  SortableTable.prototype.sortColumn = function (el, cellIndex) {
+    var tBody = this.table.tBodies[0];
+    var rows = this.table.rows;
+    var th = el.parentNode;
+    var list = [];
 
-SortableTable.prototype.setTableSortable = function() {
-  var headings = this.table.tHead.rows[0].cells;
+    Object.assign([], rows).forEach(function (row, index) {
+      if (index > 0) {
+        var cell = row.cells[cellIndex];
+        var content = cell.textContent || cell.innerText;
 
-  Object.assign([], headings).forEach(
-    function(heading, index) {
-      var sortAnchor = createAnchor.bind(this);
-      var html = heading.innerHTML;
-      heading.innerHTML = '';
-      heading.appendChild(sortAnchor(html, index));
-    }.bind(this),
-  );
-};
+        list.push({
+          value: content,
+          row: row,
+        });
+      }
+    });
 
-SortableTable.prototype.sortColumn = function(el, cellIndex) {
-  var tBody = this.table.tBodies[0];
-  var rows = this.table.rows;
-  var th = el.parentNode;
-  var list = [];
+    var hasAscendentClassName = th.className.match('ascendent_sort');
+    var hasDescendentClassName = th.className.match('descendent_sort');
 
-  Object.assign([], rows).forEach(function(row, index) {
-    if (index > 0) {
-      var cell = row.cells[cellIndex];
-      var content = cell.textContent || cell.innerText;
+    list = sortList(list, hasAscendentClassName ? -1 : 1);
 
-      list.push({
-        value: content,
-        row: row,
-      });
-    }
-  });
-
-  var hasAscendentClassName = th.className.match('ascendent_sort');
-  var hasDescendentClassName = th.className.match('descendent_sort');
-
-  list = sortList(list, hasAscendentClassName ? -1 : 1);
-
-  if (hasAscendentClassName) {
-    th.className = th.className.replace(/ascendent_sort/, 'descendent_sort');
-  } else {
-    if (hasDescendentClassName) {
-      th.className = th.className.replace(/descendent_sort/, 'ascendent_sort');
+    if (hasAscendentClassName) {
+      th.className = th.className.replace(/ascendent_sort/, 'descendent_sort');
     } else {
-      th.className += 'ascendent_sort';
+      if (hasDescendentClassName) {
+        th.className = th.className.replace(/descendent_sort/, 'ascendent_sort');
+      } else {
+        th.className += 'ascendent_sort';
+      }
     }
-  }
 
-  if (this.lastSortedTh && th !== this.lastSortedTh) {
-    this.lastSortedTh.className = this.lastSortedTh.className.replace(
-      /descendent_sort|ascendent_sort/g,
-      '',
-    );
-  }
+    if (this.lastSortedTh && th !== this.lastSortedTh) {
+      this.lastSortedTh.className = this.lastSortedTh.className.replace(
+        /descendent_sort|ascendent_sort/g,
+        '',
+      );
+    }
 
-  this.lastSortedTh = th;
+    this.lastSortedTh = th;
 
-  list.forEach(function(item, index) {
-    tBody.appendChild(item.row);
-  });
-};
+    list.forEach(function (item, index) {
+      tBody.appendChild(item.row);
+    });
+  };
 </script>
